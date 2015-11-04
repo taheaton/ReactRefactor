@@ -5,6 +5,9 @@ import $ from 'jquery';
 // This just allows us to call $(form).serializeJSON()
 // and get back a JSON object of the form data.
 import 'jquery-serializejson';
+import Backbone from 'backbone';
+import React from 'react';
+import ReactDom from 'react-dom';
 
 
 
@@ -16,7 +19,7 @@ import 'jquery-serializejson';
 
 function template(model) {
   // check of the model is complete
-  let complete = model.isComplete();
+  let complete = model.toJSON();
   
   // show a different icon based on if model is complete
   let fa = complete ? 'undo' : 'close';
